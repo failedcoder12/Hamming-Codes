@@ -31,5 +31,5 @@ What it will consist of :-
 
 ![Hamming Decoding](simpledecoding.jpg)
 
-![Comparison with Convolution](comparison.jpg)
+![Comparison with Convolution](comparison.png)
 
