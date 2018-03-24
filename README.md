@@ -1,1 +1,2 @@
-Assignment 2
+#  Hamming Codes as Error Reducing Codes
+
