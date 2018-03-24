@@ -24,3 +24,12 @@ What it will consist of :-
 * One bit of error can be corrected for length - (2^m -m -1)
 * Codeword produced for one length correction - (2^m - 1)
 * Hamming distance between the two words x; y^2 Fn2, d(x; y)
+
+## Figure
+
+![Hamming Code](hammingcoding.jpg)
+
+![Hamming Decoding](simpledecoding.jpg)
+
+![Comparison with Convolution](comparison.jpg)
+
