@@ -1,6 +1,6 @@
 **DESIGN OF HAMMING CODE AS ERROR-REDUCING  CODE**
 
-PROJECT GOAL :
+**PROJECT GOAL :**
 
 (1)  Our main contribution is to show a lower bound on the average number of errors remaining in the decoded message with standard decoding  while two errors are introduced by an adversary.
 
@@ -11,7 +11,7 @@ PROJECT GOAL :
 (4) This demonstration will be followed by several algorithms that attempt to maximize the reduction in errors along with an analysis of the performance and scalability of each algorithm.
 
 
-OUTCOMES AND OBJECTIVES :
+**OUTCOMES AND OBJECTIVES :**
 
 (1)In this implementation we initiate the study of the error-reducing property for classical families of error-correcting codes. 
 
