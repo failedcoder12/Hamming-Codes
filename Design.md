@@ -4,8 +4,8 @@
 
 (1)  Our main contribution is to show a lower bound on the average number of errors remaining in the decoded message with standard decoding  while two errors are introduced by an adversary.
 
-(2)  We also show that this lower bound is achievable for Hamming codes
-. 
+(2)  We also show that this lower bound is achievable for Hamming codes.
+
 (3) Standard decoding is not the best decoding method for the purpose of error reduction. We explore several other potential decoding methods for Hamming codes, and experimentally show that it is possible to beat the standard decoding lower bound on average number of errors. 
 
 (4) This demonstration will be followed by several algorithms that attempt to maximize the reduction in errors along with an analysis of the performance and scalability of each algorithm.
