@@ -1,4 +1,3 @@
-
 # Indroduction to Hamming codes as error reducing codes
 
 ```
@@ -15,7 +14,7 @@ What it will consist of :-
 * Hamming codes are the first of it's kind for error correcting codes which can correct error in a block of binary strings. 
 * In this we will try to analyze error reducing capabilities of the hamming codes. 
 * We are going to focus on binary linear codes. 
-* Messages are coded into some strings call codeword.They have some limit on the number or errors to be corrected.
+* Messages are coded into some strings called as codeword.They have some limit upon the number of errors to be corrected.
 * The [7; 4; 3]-Hamming code is the first Hamming code, where m = 3.
 
 ## Formulas
