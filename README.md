@@ -1,2 +1,2 @@
-#  Hamming Code as Error Reducing Code
+#  Hamming Codes as Error Reducing Codes
 
