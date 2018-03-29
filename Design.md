@@ -24,5 +24,5 @@
 * Finally, it will be of interest to compute the error-reducing properties of other well-known families of codes such as BCH codes.  
 * 
 
-**CONSTRAINS**
+**CONSTRAINS :**
 
