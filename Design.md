@@ -21,8 +21,9 @@
 
 * Future work should address the best possible reduction that can be achieved as no lower bound is known in general. 
 
-* Finally, it will be of interest to compute the error-reducing properties of other well-known families of codes such as BCH codes.  
-* 
+* Finally, it will be of interest to compute the error-reducing properties of other well-known families of codes such as BCH codes. 
+
+* Finally, it will be of interest to compute the error-reducing properties of other well-known families of codes such as BCH codes. 
 
 **CONSTRAINS :**
 
