@@ -2,19 +2,28 @@
 ```
 
 ```
-## Theoretical Aspects
+## About
 * Hamming codes are the first of it's kind for error correcting codes which can correct error in a block of binary strings. 
 * In this we try to analyze error reducing capabilities of the hamming codes. 
 * We are focused on binary linear codes. 
  Messages are coded into some strings called as codeword.They have some limit upon the number of errors to be corrected.
 * The [7; 4; 3]-Hamming code is the first Hamming code, where m = 3.
-
-## Formulas
-
 * Number of maximum error corrected - floor((d-1)/2)
 * One bit of error can be corrected for length - (2^m -m -1)
 * Codeword produced for one length correction - (2^m - 1)
 * Hamming distance between the two words x; y^2 Fn2, d(x; y)
+ 
+##Standard decoding of hamming code
+
+* The [7,4,3]-Hamming code has generator matrix G and parity check matrix H, given below respectively:
+     1 1 1 0 0 0 0 1
+0 0 1 1 0 0 0
+1 0 1 0 1 0 0
+0 1 1 0 0 1
+   ; 
+ 0 0 0 1 1 1 1
+0 1 1 0 0 1 1 
+1 0 1 0 1 0 1 
 
 ## Figure
 
