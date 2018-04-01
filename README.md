@@ -37,7 +37,7 @@
 
 * We were able to reduce the number of errors in the set of codewords to an average of 1.8571 - but this is not the fundamental limits of standard decoding with the [7,4,3]Hamming code. Starting with the generator matrix G
 * If we replace the second row with the modulo-2 sum of the ﬁrst two rows, we get the following generator matrix. 
-* G' = 
+ * G' = 
   * 1 1 1 0 0 0 0
   * 0 1 1 1 1 0 0 
   * 0 1 0 1 0 1 0
