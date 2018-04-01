@@ -32,3 +32,11 @@ What it will consist of :-
 
 ![Comparison with Convolution](comparison.png)
 
+
+## Word Done till Now
+
+*  Suppose one or more errors are introduced into a codeword for a Hamming code of any order with standard decoding. Let q be the column of the parity-check matrix that is
+determined to be erroneous (i.e., q is the product of the parity check matrix and the erroneous codeword). q is independent
+of the initial message to be sen
+*  The number of errors in the decoded message (standard decoding) is independent of the transmitted message
+
