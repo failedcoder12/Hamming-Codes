@@ -16,14 +16,14 @@
 ##Standard decoding of hamming code
 
 * The [7,4,3]-Hamming code has generator matrix G and parity check matrix H, given below respectively:
-     1 1 1 0 0 0 0 1
-0 0 1 1 0 0 0
-1 0 1 0 1 0 0
-0 1 1 0 0 1
-   ; 
- 0 0 0 1 1 1 1
-0 1 1 0 0 1 1 
-1 0 1 0 1 0 1 
+ *G = * 1 1 1 0 0 0 0 
+      * 1 0 0 1 1 0 0 
+      * 0 1 0 1 0 1 0
+      * 0 0 1 1 0 0 1
+ *H = 
+*  0 0 0 1 1 1 1
+ * 0 1 1 0 0 1 1 
+ * 1 0 1 0 1 0 1
 
 ## Figure
 
