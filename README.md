@@ -41,7 +41,7 @@
   * 0 1 1 1 1 0 0 
   * 0 1 0 1 0 1 0
   * 0 0 1 1 0 0 1 
-  * When generator matrix G' is used along with the parity check matrix, the average number of errors found in the decoded message for all error vectors becomes 12/7 or about 1.7143. While this improvement is relatively small, this Hamming code reaches the maximum level of error reduction that is theoretically possible for the
+* When generator matrix G' is used along with the parity check matrix, the average number of errors found in the decoded message for all error vectors becomes 12/7 or about 1.7143. While this improvement is relatively small, this Hamming code reaches the maximum level of error reduction that is theoretically possible for the
 [7,4,3]-Hamming code with standard decoding. 
 * This means that for any [7,4,3]-Hamming code with two errors, the error reducing capabilities of standard decoding is limited to an average of 1.7143 errors across all possible error vectors. 
 
