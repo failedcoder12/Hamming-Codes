@@ -11,9 +11,10 @@
 * Number of maximum error corrected - floor((d-1)/2)
 * One bit of error can be corrected for length - (2^m -m -1)
 * Codeword produced for one length correction - (2^m - 1)
-* Hamming distance between the two words x; y^2 Fn2, d(x; y)
- 
-##Standard decoding of hamming code
+* Hamming distance between the two words x; y^2 Fn2, d(x; y).
+
+
+## Standard Hamming code decoding
 
 * The [7,4,3]-Hamming code has generator matrix G and parity check matrix H, given below respectively:.
  * G = 
