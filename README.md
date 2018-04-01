@@ -34,16 +34,17 @@
 
 ## Explaination
 
-* When generator matrix G is used along with the parity check matrix, the average number of errors found in the decoded message for all error vectors becomes 12/7 or about 1.7143. While this improvement is relatively small, this Hamming code reaches the maximum level of error reduction that is theoretically possible for the
+* We were able to reduce the number of errors in the set of codewords to an average of 1.8571 - but this is not the fundamental limits of standard decoding with the [7,4,3]Hamming code. Starting with the generator matrix G
+* If we replace the second row with the modulo-2 sum of the ﬁrst two rows, we get the following generator matrix. 
+* G' = 
+  * 1 1 1 0 0 0 0
+  * 0 1 1 1 1 0 0 
+  * 0 1 0 1 0 1 0
+  * 0 0 1 1 0 0 1 
+  * When generator matrix G' is used along with the parity check matrix, the average number of errors found in the decoded message for all error vectors becomes 12/7 or about 1.7143. While this improvement is relatively small, this Hamming code reaches the maximum level of error reduction that is theoretically possible for the
 [7,4,3]-Hamming code with standard decoding. 
 * This means that for any [7,4,3]-Hamming code with two errors, the error reducing capabilities of standard decoding is limited to an average of 1.7143 errors across all possible error vectors. 
 
 
-## Word Done till Now
-
-*  Suppose one or more errors are introduced into a codeword for a Hamming code of any order with standard decoding. Let q be the column of the parity-check matrix that is
-determined to be erroneous (i.e., q is the product of the parity check matrix and the erroneous codeword). q is independent
-of the initial message to be sen
-*  The number of errors in the decoded message (standard decoding) is independent of the transmitted message
 
 
