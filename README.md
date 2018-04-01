@@ -1,7 +1,8 @@
 #  Hamming Codes as Error Reducing Codes
 ```
-## Theoretical Aspects
+
 ```
+## Theoretical Aspects
 * Hamming codes are the first of it's kind for error correcting codes which can correct error in a block of binary strings. 
 * In this we try to analyze error reducing capabilities of the hamming codes. 
 * We are focused on binary linear codes. 
