@@ -23,9 +23,9 @@ GT = np.transpose(G)
 Codeword = np.dot(GT,C)%2
 print(Codeword)
 
-e = np.transpose(np.array([0,0,0,1,0,0,0]))
+e = np.transpose(np.array([1,0,0,1,0,0,0]))
 
-Transmitted = e + Codeword
+Transmitted = (e + Codeword)%2
 print(Transmitted)
 
 decode = np.dot(H,Transmitted)%2
