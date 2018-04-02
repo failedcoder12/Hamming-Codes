@@ -26,12 +26,30 @@
       * 0 0 0 1 1 1 1
       * 0 1 1 0 0 1 1 
       * 1 0 1 0 1 0 1
+      
+
+## Lower Bound on Hamming code decoding
+
+* The [7,4,3]-Hamming code has generator matrix G and parity check matrix H, given below respectively:.
+ * G1 = 
+      * 1 1 1 0 0 0 0 
+      * 0 1 1 1 1 0 0 
+      * 0 1 0 1 0 1 0
+      * 0 0 1 1 0 0 1
+ * H1 = 
+      * 0 0 0 1 1 1 1
+      * 0 1 1 0 0 1 1 
+      * 1 0 1 0 1 0 1
+      
+
+```
+Figure Output shows the comparison in Hamming codding decoding with standard decoding and what we get as a lower bound on it.
+```
 
 ## Figure
 
 ![Output](Figure.png)
 
-![Comparison with Convolution](comparison.png)
 
 ## Explaination
 
