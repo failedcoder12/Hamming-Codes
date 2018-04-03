@@ -28,8 +28,6 @@ What it will consist of :-
 
 ![Hamming Code](hammingcoding.jpg)
 
-![Hamming Decoding](simpledecoding.jpg)
-
 ![Comparison with Convolution](comparison.png)
 
 
