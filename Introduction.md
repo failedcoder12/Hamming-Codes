@@ -37,4 +37,5 @@ What it will consist of :-
 determined to be erroneous (i.e., q is the product of the parity check matrix and the erroneous codeword). q is independent
 of the initial message to be sen
 *  The number of errors in the decoded message (standard decoding) is independent of the transmitted message
+*  We have proved that the lower bound of hamming code error detection can be achieved by other error reducing methods
 
