@@ -1,4 +1,4 @@
-
+%Matlab encoding and decoding algorithm %
 %Simulation for encoding and decoding of a [7,4] Hamming code. The decoder
 %can correct one error as shown and as theory states. The table at the end
 %of the file shows the various outputs with different error positions and
