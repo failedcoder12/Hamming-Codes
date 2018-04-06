@@ -11,7 +11,7 @@ k = 4%# of message bits per block
 A = [ 1 1 1;1 1 0;1 0 1;0 1 1 ];%Parity submatrix-Need binary(decimal combination of 7,6,5,3)            
 G = [ eye(k) A ]%Generator matrix
 H = [ A' eye(n-k) ]%Parity-check matrix
-% ENCODER%
+% Encode %
 msg = [ 1 1 1 1 ] %Message block vector-change to any 4 bit sequence
 code = mod(msg*G,2)%Encode message
 % CHANNEL ERROR(add one error to code)%
@@ -23,7 +23,7 @@ code = mod(msg*G,2)%Encode message
 %code(6)= ~code(6);
 %code(7)= ~code(7);
 recd = code %Received codeword with error
-% DECODER%
+% Decode %
 syndrome = mod(recd * H',2)
 %Find position of the error in codeword (index)
 find = 0;
