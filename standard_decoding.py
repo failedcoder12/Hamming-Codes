@@ -96,19 +96,4 @@ G = np.array([[1,1,1,0,0,0,0],
 			[0,1,0,1,0,1,0],
 			[0,0,1,1,0,0,1]])
 
-% Parity check Matrix %
-H = np.array([[0,0,0,1,1,1,1],
-			[0,1,1,0,0,1,1],
-			[1,0,1,0,1,0,1]])
-
-objects = ('Standard Decoding', 'Lower Bounding')
-y_pos = np.arange(len(objects))
-performance = [error_generator(H,G),error_generator(H,G1)]
- 
-plt.bar(y_pos, performance, align='center', alpha=0.5)
-plt.xticks(y_pos, objects)
-plt.ylabel('Average Error')
-plt.title('Hamming Codes')
- 
-plt.show()
 
