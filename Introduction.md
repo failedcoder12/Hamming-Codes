@@ -38,4 +38,6 @@ determined to be erroneous (i.e., q is the product of the parity check matrix an
 of the initial message to be sen
 *  The number of errors in the decoded message (standard decoding) is independent of the transmitted message
 *  We have proved that the lower bound of hamming code error detection can be achieved by other error reducing methods
+*  we  Consider a [n = 2m −1, 2m −1−m, 3]-Hamming code with standard decoding. If the received vector y has two errors present, then the index of the column labeled aserroneous by multiplying the parity check matrix with y will
+always correspond to a 0 on the error vector.
 
