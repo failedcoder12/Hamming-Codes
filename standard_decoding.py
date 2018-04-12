@@ -86,6 +86,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
+% We get the following matrix after replacing the second row with the modulo-2 sum of the first two rows%
+G1 = np.array([[1,1,1,0,0,0,0],
+			[0,1,1,1,1,0,0],
+			[0,1,0,1,0,1,0],
+			[0,0,1,1,0,0,1]])
+			
 % Standard generator matrix %
 G = np.array([[1,1,1,0,0,0,0],
 			[1,0,0,1,1,0,0],
