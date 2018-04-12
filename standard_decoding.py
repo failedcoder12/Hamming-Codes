@@ -84,11 +84,7 @@ def error_generator(H,G):
 import matplotlib.pyplot as plt; plt.rcdefaults()
 import numpy as np
 import matplotlib.pyplot as plt
-% replacing the second row with the modulo-2 sum of the ﬁrst two rows, we get the following generator matrix %
-G1 = np.array([[1,1,1,0,0,0,0],
-			[0,1,1,1,1,0,0],
-			[0,1,0,1,0,1,0],
-			[0,0,1,1,0,0,1]])
+
 
 % Standard generator matrix %
 G = np.array([[1,1,1,0,0,0,0],
