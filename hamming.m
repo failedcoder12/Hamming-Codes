@@ -5,6 +5,7 @@
 %of the file shows the various outputs with different error positions and
 %message bits. One error can be placed at any of the 7 bit locations and
 %corrections made.
+%here we have made corrections to one bit error only..we will extending it to 2 bit error 
 clear
 n = 7%# of codeword bits per block
 k = 4%# of message bits per block
