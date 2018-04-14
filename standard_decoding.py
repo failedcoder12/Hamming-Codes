@@ -33,11 +33,11 @@ def error_generator(H,G):
 
 
 		import itertools
-
-		lis = list(set(list(itertools.permutations([0,0,0,1,0,0,1]))))
+		perm = 0
+		lis = list(set(list(itertools.permutations([1,0,1,0,0,0,0]))))
 		for listt in lis:
 			e = np.array([int(x) for x in listt])
-			
+			perm = perm + 1
 			# e = np.transpose(np.array([0,0,0,1,0,0,1]))
 
 			Transmitted = (e + Codeword)%2
@@ -73,13 +73,17 @@ def error_generator(H,G):
 					print(np.sum(C != Map[num]))
 					errors += np.sum(C != Map[num])
 			else:
+				Map[num] = np.array([1,1,1,1])
+				print(np.sum(C!=Map[num]))
+				errors += np.sum(C!=Map[num])
 				print("No possible")
 
 			print("-----------------------------------------------------------------")
 
-	print("Errors ", errors/336)
+	print(perm)
+	print("Errors ", errors/(16*perm))
 
-	return errors/336
+	return errors/(16*perm)
 
 import matplotlib.pyplot as plt; plt.rcdefaults()
 import numpy as np
@@ -103,9 +107,15 @@ H = np.array([[0,0,0,1,1,1,1],
 			[0,1,1,0,0,1,1],
 			[1,0,1,0,1,0,1]])
 
-objects = ('Standard Decoding', 'Lower Bounding')
+objects = ('Standard Decoding', 'Optimized Standard Decoding')
 y_pos = np.arange(len(objects))
-performance = [error_generator(H,G),error_generator(H,G1)]
+
+GH = error_generator(H,G)
+GH1 = error_generator(H,G1)
+
+print(GH,GH1)
+
+performance = [GH,GH1]
  
 plt.bar(y_pos, performance, align='center', alpha=0.5)
 plt.xticks(y_pos, objects)
