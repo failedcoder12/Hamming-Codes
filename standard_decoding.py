@@ -1,13 +1,21 @@
-# % Standard Decoding algorithm %
+# Standard Decoding algorithm 
 def error_generator(H,G):
-	print("Generator Matrix ", G)
 	print("Correction Matrix", H)
+	print("Generator Matrix ", G)
 
+#Map which will be used to do mapping of each codeword woth dataword
 	Map = {}
 
+#Mapping all
 	for i in range(16):
+
+		#Converting decimal number to a binary list of size 4
 		C = np.array([int(x) for x in list('{0:04b}'.format(i))])
+		
+		#Transposing matrix
 		GT = np.transpose(G)
+
+		#Dot product if two matrix
 		Codeword = np.dot(GT,C)%2
 		num = 0
 		poww = 1
@@ -16,36 +24,50 @@ def error_generator(H,G):
 			poww = poww*2
 		Map[num] = C
 
+	#Setting number of errors to 0
 	errors = 0
 
+	#Iterating over the all possible codewords
 	for i in range(16):
 		print("-----------------------------------------------------------------------------------")
 
 		print(i,"->")
 
+		#Converting it to binary form
 		C = np.array([int(x) for x in list('{0:04b}'.format(i))])
 		print("Message : ",C)
 
+		#Taking transpose
 		GT = np.transpose(G)
 
+		#codeworking by taking dot product of generator and dataword 
 		Codeword = np.dot(GT,C)%2
 		print("Codeword : ",Codeword)
 
-
+		#Python tool for getting permutation
 		import itertools
+
+		#Setting number of permutation to 0 and then counting
 		perm = 0
+
+		#putting all possible permutation in lis
 		lis = list(set(list(itertools.permutations([1,0,1,0,0,0,0]))))
+
+		#looping over complete lis
 		for listt in lis:
 			e = np.array([int(x) for x in listt])
 			perm = perm + 1
 			# e = np.transpose(np.array([0,0,0,1,0,0,1]))
 
+			#Adding error
 			Transmitted = (e + Codeword)%2
 			print(Transmitted)
 
+			#decoding it	
 			decode = np.dot(H,Transmitted)%2
 			print(decode)
 
+			#Detecting error and correcting
 			val = 0
 			HT = np.transpose(H)
 			for i in range(HT.shape[0]):
@@ -53,15 +75,19 @@ def error_generator(H,G):
 					val = i
 					break
 
+			#correcting it
 			Transmitted[val] = (Transmitted[val]+1)%2
 
 			print(Transmitted)
 
+			#Getting word to be decoded
 			decode = np.dot(H,Transmitted)%2
 			print(decode)
 
 			num = 0
 			poww = 1
+
+			#Calculating number of errors
 			for j in Transmitted:
 				num = num + j*poww
 				poww = poww*2
@@ -85,38 +111,45 @@ def error_generator(H,G):
 
 	return errors/(16*perm)
 
+#Importing libraries required for plotting and calculating
 import matplotlib.pyplot as plt; plt.rcdefaults()
 import numpy as np
 import matplotlib.pyplot as plt
 
 
-# % We get the following matrix after replacing the second row with the modulo-2 sum of the first two rows%
+#  We get the following matrix after replacing the second row with the modulo-2 sum of the first two rows
 G1 = np.array([[1,1,1,0,0,0,0],
 			[0,1,1,1,1,0,0],
 			[0,1,0,1,0,1,0],
 			[0,0,1,1,0,0,1]])
 			
-# % Standard generator matrix %
+#  Standard generator matrix 
 G = np.array([[1,1,1,0,0,0,0],
 			[1,0,0,1,1,0,0],
 			[0,1,0,1,0,1,0],
 			[0,0,1,1,0,0,1]])
 
-# % Parity check Matrix %
+# Parity check Matrix 
 H = np.array([[0,0,0,1,1,1,1],
 			[0,1,1,0,0,1,1],
 			[1,0,1,0,1,0,1]])
 
+
+#Giving name to graph plot
 objects = ('Standard Decoding', 'Optimized Standard Decoding')
 y_pos = np.arange(len(objects))
 
+# Calculating errors percentage
 GH = error_generator(H,G)
 GH1 = error_generator(H,G1)
 
+#Printing them (Percentage error)
 print(GH,GH1)
 
+#Converting it to a array
 performance = [GH,GH1]
  
+#Plotting it
 plt.bar(y_pos, performance, align='center', alpha=0.5)
 plt.xticks(y_pos, objects)
 plt.ylabel('Average Error')
