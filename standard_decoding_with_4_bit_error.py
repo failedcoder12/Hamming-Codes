@@ -1,4 +1,8 @@
 # Standard Decoding algorithm 
+
+def hamming_distance(A,B):
+	return np.sum(A != B)
+
 def error_generator(H,G):
 	print("Correction Matrix", H)
 	print("Generator Matrix ", G)
@@ -51,7 +55,7 @@ def error_generator(H,G):
 		perm = 0
 
 		#putting all possible permutation in lis
-		lis = list(set(list(itertools.permutations([1,0,1,0,0,0,0]))))
+		lis = list(set(list(itertools.permutations([1,1,1,1,0,0,0]))))
 
 		#looping over complete lis
 		for listt in lis:
@@ -68,17 +72,19 @@ def error_generator(H,G):
 			print(decode)
 
 			#Detecting error and correcting
-			val = 0
-			HT = np.transpose(H)
-			for i in range(HT.shape[0]):
-				if (HT[i][0:] == decode).all():
-					val = i
-					break
+			for k in range(3):
+				val = -1
+				HT = np.transpose(H)
+				for i in range(HT.shape[0]):
+					if (HT[i][0:] == decode).all():
+						val = i
+						break
 
 			#correcting it
-			Transmitted[val] = (Transmitted[val]+1)%2
+				if(val != -1):
+					Transmitted[val] = (Transmitted[val]+1)%2
 
-			print(Transmitted)
+				print(Transmitted)
 
 			#Getting word to be decoded
 			decode = np.dot(H,Transmitted)%2
@@ -99,9 +105,14 @@ def error_generator(H,G):
 					print(np.sum(C != Map[num]))
 					errors += np.sum(C != Map[num])
 			else:
-				Map[num] = np.array([1,1,1,1])
-				print(np.sum(C!=Map[num]))
-				errors += np.sum(C!=Map[num])
+				mini_ans = next(iter(Map))
+				mini_hamm = hamming_distance(num,mini_ans)
+				for key,valu in Map.items():
+					if(hamming_distance(num,key)<=mini_hamm):
+						mini_hamm = hamming_distance(num,key)
+						mini_ans = key
+				print(np.sum(C != Map[mini_ans]))
+				errors += np.sum(C != Map[mini_ans])
 				print("No possible")
 
 			print("-----------------------------------------------------------------")
@@ -153,7 +164,7 @@ performance = [GH,GH1]
 plt.bar(y_pos, performance, align='center', alpha=0.5)
 plt.xticks(y_pos, objects)
 plt.ylabel('Average Error')
-plt.title('Hamming Codes')
+plt.title('Comparison for four bit error')
  
 plt.show()
 
