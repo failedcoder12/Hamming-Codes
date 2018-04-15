@@ -17,19 +17,19 @@ from plotly.graph_objs import *
 py.sign_in('DivyanshVerma', 'kl9OVfY286DrLx2GbF6Y')
 trace1 = {
   "x": ["2 bit error", "3 bit error", "4 bit error"], 
-  "y": [1.94285714286, 1.94285714286, 1.94285714286], 
+  "y": [1.85714285714, 2.2, 1.94285714286], 
   "name": "Standard Decoding", 
   "type": "bar", 
-  "xsrc": "DivyanshVerma:1:32f163", 
-  "ysrc": "DivyanshVerma:1:f66ab9"
+  "xsrc": "DivyanshVerma:1:492432", 
+  "ysrc": "DivyanshVerma:1:e28158"
 }
 trace2 = {
   "x": ["2 bit error", "3 bit error", "4 bit error"], 
-  "y": [1.82857142857, 1.82857142857, 1.82857142857], 
+  "y": [1.71428571429, 2.17142857143, 1.82857142857], 
   "name": "Standard Decoding with Optimization", 
   "type": "bar", 
-  "xsrc": "DivyanshVerma:1:32f163", 
-  "ysrc": "DivyanshVerma:1:627e1c"
+  "xsrc": "DivyanshVerma:1:492432", 
+  "ysrc": "DivyanshVerma:1:d42af8"
 }
 data = Data([trace1, trace2])
 layout = {"barmode": "group"}

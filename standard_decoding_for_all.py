@@ -364,8 +364,7 @@ def error_generator_four_bit(H,G):
 import matplotlib.pyplot as plt; plt.rcdefaults()
 import numpy as np
 import matplotlib.pyplot as plt
-import pandas as pd
-
+from matplotlib.ticker import FormatStrFormatter
 #  We get the following matrix after replacing the second row with the modulo-2 sum of the first two rows
 G1 = np.array([[1,1,1,0,0,0,0],
 			[0,1,1,1,1,0,0],
@@ -389,28 +388,39 @@ objects = ('Standard Decoding', 'Optimized Standard Decoding')
 y_pos = np.arange(len(objects))
 
 # Calculating errors percentage
+GH2 = error_generator_two_bit(H,G)
+GH21 = error_generator_two_bit(H,G1)
+
+GH3 = error_generator_three_bit(H,G)
+GH31 = error_generator_three_bit(H,G1)
+
 GH4 = error_generator_four_bit(H,G)
 GH41 = error_generator_four_bit(H,G1)
 
-GH3 = error_generator_four_bit(H,G)
-GH31 = error_generator_four_bit(H,G1)
+N = 3
 
-GH2 = error_generator_four_bit(H,G)
-GH21 = error_generator_four_bit(H,G1)
+GHH = (GH2,GH3,GH4)
+GHH2 = (GH21,GH31,GH41)
 
+fig,ax = plt.subplots()
+ind = np.arange(N)
+width = 0.20
+p1 = ax.bar(ind,GHH,width)
 
-groups = [[GH2,GH21],[GH3,GH31],[GH4,GH41]]
-group_labels = ['2 Bit Error','3 Bit Error','4 Bit Error']
+p2 = ax.bar(ind+width/2,GHH2,width)
+ax.set_title('Standard vs Optimal Standard Decoding')
+ax.set_xticks(ind+width/2)
+ax.yaxis.set_major_formatter(FormatStrFormatter('%g'))
+ax.yaxis.set_ticks(np.arange(0, 2.5, 0.1))
+ax.set_xticklabels(('2 bit error','3 bit error','4 bit error'))
+ax.legend((p1[0],p2[0]),('Standard Decoding','Optimal Standard Decoding'))
+# ax.yaxis.set_units(inch)
+ax.autoscale_view()
+plt.grid()
+print(GHH)
+print(GHH2)
+plt.show()
 
-df = pd.DataFrame(groups,index=group_labels).T
-
-pd.concat(
-	[df.max().rename('Standard Decoding'),
-	df.min().rename('Standard Decoding with Optimization')],
-	axis=1).plot.bar()
-
-
-print('Graph Plotted')
 # import plotly
 # import plotly.plotly as py
 # import plotly.graph_objs as go
