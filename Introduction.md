@@ -29,7 +29,7 @@ received vector upon decoding
 
 ## Figure
 
-![Hamming Code](Figure.png)
+![Hamming Code](pyplot.png)
 
 
 
