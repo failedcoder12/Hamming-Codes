@@ -26,7 +26,7 @@ What it will consist of :-
 
 ## Figure
 
-![Hamming Code](FIgure.jpg)
+![Hamming Code](Figure.jpg)
 
 
 
