@@ -46,14 +46,10 @@
 Figure Output shows the comparison in Hamming codding decoding with standard decoding and what we get as a lower bound on it.
 ```
 
-## Figure
-
-![Output](Figure.png)
-
-
 ## Explaination
 
-* We were able to reduce the number of errors in the set of codewords to an average of 1.857 - but this is not the fundamental limits of standard decoding with the [7,4,3]Hamming code. Starting with the generator matrix G
+
+
 * If we replace the second row with the modulo-2 sum of the ﬁrst two rows, we get the following generator matrix. 
  * G' = 
       * 1 1 1 0 0 0 0
@@ -62,8 +58,25 @@ Figure Output shows the comparison in Hamming codding decoding with standard dec
       * 0 0 1 1 0 0 1 
 * When generator matrix G' is used along with the parity check matrix, the average number of errors found in the decoded message for all error vectors becomes 12/7 or about 1.714. While this improvement is relatively small, this Hamming code reaches the maximum level of error reduction that is theoretically possible for the
 [7,4,3]-Hamming code with standard decoding. 
-* This means that for any [7,4,3]-Hamming code with two errors, the error reducing capabilities of standard decoding is limited to an average of 1.714 errors across all possible error vectors. 
+
 * Now using the lower-bound technique the ratio has been increased
 
+**For 2 Bit error**
+
+![Output of 2 bit error correction](2bit.png)
+
+*For  2 bit error correction we were able to reduce the error in the set of the codewords to an average of 1.8571 by standard decoding method, but by optimizing the standard decoding method the count of average number of error is reduced to 1.7143.
+
+**For 3 Bit error**
+
+![Output of 3 bit error correction](3bit.png)
+
+*For  3 bit error  correction we were able to reduce the error in the set of the codewords to an average of 2.200 by standard decoding method, but by optimizing the standard decoding method the count of average number of error is reduced to 2.1714.
+
+**For 4 bit error**
+
+![Output of 4 bit error correxction](4bit.png)
+
+*For  34 bit error correction we were able to reduce the error in the set of the codewords to an average of 1.9429 by standard decoding method, but by optimizing the standard decoding method the count of average number of error is reduced to 1.8286.
 
 
