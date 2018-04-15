@@ -12,6 +12,9 @@ What it will consist of :-
 ## Theoretical Aspects
 
 * Hamming codes are the first of it's kind for error correcting codes which can correct error in a block of binary strings. 
+* But there is a limit on correcting capability of a code word given by the formula floor((d-1)/2) where d is the minimum pairwise hamming distance between the words of the code.
+*  When this limit is exceeded, undefined behavior occurs when attempting to apply error correction to the erroneous vector. This motivates the exploration and construction of new models that attempt to reduce the number of errors in the
+received vector upon decoding
 * In this we will try to analyze error reducing capabilities of the hamming codes. 
 * We are going to focus on binary linear codes. 
 * Messages are coded into some strings called as codeword.They have some limit upon the number of errors to be corrected.
