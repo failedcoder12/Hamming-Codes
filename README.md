@@ -84,8 +84,4 @@ Figure Output shows the comparison in Hamming codding decoding with standard dec
 ![Final Result](all.png)
 
 
-| Number of error introduced | Standard Decoding |  Optimised Standard Decoding  |
- | -------- | ---- | -------- |
- | 2 | 1.8571 | 1.7143 |
- | 3 | 2.2000 | 2.1714 |
- | 4 | 1.9429 | 1.8286 |
+![Table](table.png)
