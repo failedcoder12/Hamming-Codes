@@ -79,4 +79,12 @@ Figure Output shows the comparison in Hamming codding decoding with standard dec
 
 * For  34 bit error correction we were able to reduce the error in the set of the codewords to an average of 1.9429 by standard decoding method, but by optimizing the standard decoding method the count of average number of error is reduced to 1.8286.
 
+## Final Result
 
+![Final Result](all.png)
+
+| Number of error introduced | Standard Decoding |  Optimised Standard Decoding  |
+ | -------- | ---- | -------- |
+ | 2 | 1.8571 | 1.7143 |
+ | 3 | 2.2000 | 2.1714 |
+ | 4 | 1.9429 | 1.8286 |
