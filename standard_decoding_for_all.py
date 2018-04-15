@@ -1,8 +1,10 @@
 # Standard Decoding algorithm 
 
+#Calculating Hamming distance between two codeword
 def hamming_distance(A,B):
 	return np.sum(A != B)
 
+#Two bit error generator
 def error_generator_two_bit(H,G):
 	print("Correction Matrix", H)
 	print("Generator Matrix ", G)
@@ -10,7 +12,7 @@ def error_generator_two_bit(H,G):
 #Map which will be used to do mapping of each codeword woth dataword
 	Map = {}
 
-#Mapping all
+#Mapping all Codeword with Dataword
 	for i in range(16):
 
 		#Converting decimal number to a binary list of size 4
@@ -19,7 +21,7 @@ def error_generator_two_bit(H,G):
 		#Transposing matrix
 		GT = np.transpose(G)
 
-		#Dot product if two matrix
+		#Dot product if two matrix to get Codeword
 		Codeword = np.dot(GT,C)%2
 		num = 0
 		poww = 1
@@ -97,6 +99,8 @@ def error_generator_two_bit(H,G):
 			for j in Transmitted:
 				num = num + j*poww
 				poww = poww*2
+
+			#Checking in Map to find whether that codeword  is there or not
 			if num in Map:
 				print(Map[num])
 				if (Map[num] == C).all():
@@ -104,6 +108,7 @@ def error_generator_two_bit(H,G):
 				else:
 					print(np.sum(C != Map[num]))
 					errors += np.sum(C != Map[num])
+			#If not found in map then finding the one with least hamming distance with map
 			else:
 				mini_ans = next(iter(Map))
 				mini_hamm = hamming_distance(num,mini_ans)
@@ -111,6 +116,7 @@ def error_generator_two_bit(H,G):
 					if(hamming_distance(num,key)<=mini_hamm):
 						mini_hamm = hamming_distance(num,key)
 						mini_ans = key
+			#Adding it to error
 				print(np.sum(C != Map[mini_ans]))
 				errors += np.sum(C != Map[mini_ans])
 				print("No possible")
@@ -122,6 +128,7 @@ def error_generator_two_bit(H,G):
 
 	return errors/(16*perm)
 
+#Three bit error generator
 def error_generator_three_bit(H,G):
 	print("Correction Matrix", H)
 	print("Generator Matrix ", G)
@@ -216,6 +223,8 @@ def error_generator_three_bit(H,G):
 			for j in Transmitted:
 				num = num + j*poww
 				poww = poww*2
+			
+			#Getting Mapped Dataword from Codeword
 			if num in Map:
 				print(Map[num])
 				if (Map[num] == C).all():
@@ -223,6 +232,7 @@ def error_generator_three_bit(H,G):
 				else:
 					print(np.sum(C != Map[num]))
 					errors += np.sum(C != Map[num])
+			#If not found in map then finding the one with least hamming distance with map
 			else:
 				mini_ans = next(iter(Map))
 				mini_hamm = hamming_distance(num,mini_ans)
@@ -231,6 +241,7 @@ def error_generator_three_bit(H,G):
 						mini_hamm = hamming_distance(num,key)
 						mini_ans = key
 				print(np.sum(C != Map[mini_ans]))
+				#Increasing error
 				errors += np.sum(C != Map[mini_ans])
 				print("No possible")
 
@@ -335,6 +346,8 @@ def error_generator_four_bit(H,G):
 			for j in Transmitted:
 				num = num + j*poww
 				poww = poww*2
+
+			#Getting the mapped value of dataword of codeword
 			if num in Map:
 				print(Map[num])
 				if (Map[num] == C).all():
@@ -343,6 +356,8 @@ def error_generator_four_bit(H,G):
 					print(np.sum(C != Map[num]))
 					errors += np.sum(C != Map[num])
 			else:
+
+				#if not found then taking the one with minimum hamming distance
 				mini_ans = next(iter(Map))
 				mini_hamm = hamming_distance(num,mini_ans)
 				for key,valu in Map.items():
@@ -350,6 +365,7 @@ def error_generator_four_bit(H,G):
 						mini_hamm = hamming_distance(num,key)
 						mini_ans = key
 				print(np.sum(C != Map[mini_ans]))
+				#increasing error 
 				errors += np.sum(C != Map[mini_ans])
 				print("No possible")
 
@@ -387,7 +403,7 @@ H = np.array([[0,0,0,1,1,1,1],
 objects = ('Standard Decoding', 'Optimized Standard Decoding')
 y_pos = np.arange(len(objects))
 
-# Calculating errors percentage
+# Calculating errors percentage for all two three and four bits
 GH2 = error_generator_two_bit(H,G)
 GH21 = error_generator_two_bit(H,G1)
 
@@ -397,18 +413,29 @@ GH31 = error_generator_three_bit(H,G1)
 GH4 = error_generator_four_bit(H,G)
 GH41 = error_generator_four_bit(H,G1)
 
+#Graph Plotting
 N = 3
 
 GHH = (GH2,GH3,GH4)
 GHH2 = (GH21,GH31,GH41)
 
+#Setting figure plot
 fig,ax = plt.subplots()
 ind = np.arange(N)
+
+#Setting width of bar
 width = 0.20
+
+#setting width of Standard Decoding 
 p1 = ax.bar(ind,GHH,width)
 
+#setting width of Standard Decoding with Optimization
 p2 = ax.bar(ind+width/2,GHH2,width)
+
+#setting title
 ax.set_title('Standard vs Optimal Standard Decoding')
+
+#other format
 ax.set_xticks(ind+width/2)
 ax.yaxis.set_major_formatter(FormatStrFormatter('%g'))
 ax.yaxis.set_ticks(np.arange(0, 2.5, 0.1))
@@ -419,6 +446,8 @@ ax.autoscale_view()
 plt.grid()
 print(GHH)
 print(GHH2)
+
+#Showing error graph
 plt.show()
 
 # import plotly
