@@ -65,18 +65,18 @@ Figure Output shows the comparison in Hamming codding decoding with standard dec
 
 ![Output of 2 bit error correction](2bit.png)
 
-*For  2 bit error correction we were able to reduce the error in the set of the codewords to an average of 1.8571 by standard decoding method, but by optimizing the standard decoding method the count of average number of error is reduced to 1.7143.
+* For  2 bit error correction we were able to reduce the error in the set of the codewords to an average of 1.8571 by standard decoding method, but by optimizing the standard decoding method the count of average number of error is reduced to 1.7143.
 
 **For 3 Bit error**
 
 ![Output of 3 bit error correction](3bit.png)
 
-*For  3 bit error  correction we were able to reduce the error in the set of the codewords to an average of 2.200 by standard decoding method, but by optimizing the standard decoding method the count of average number of error is reduced to 2.1714.
+* For  3 bit error  correction we were able to reduce the error in the set of the codewords to an average of 2.200 by standard decoding method, but by optimizing the standard decoding method the count of average number of error is reduced to 2.1714.
 
 **For 4 bit error**
 
 ![Output of 4 bit error correxction](4bit.png)
 
-*For  34 bit error correction we were able to reduce the error in the set of the codewords to an average of 1.9429 by standard decoding method, but by optimizing the standard decoding method the count of average number of error is reduced to 1.8286.
+* For  34 bit error correction we were able to reduce the error in the set of the codewords to an average of 1.9429 by standard decoding method, but by optimizing the standard decoding method the count of average number of error is reduced to 1.8286.
 
 
