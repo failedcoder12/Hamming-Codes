@@ -26,9 +26,8 @@ What it will consist of :-
 
 ## Figure
 
-![Hamming Code](hammingcoding.jpg)
+![Hamming Code](FIgure.jpg)
 
-![Comparison with Convolution](comparison.png)
 
 
 ## Word Done till Now
