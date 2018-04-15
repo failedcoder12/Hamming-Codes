@@ -26,19 +26,19 @@
 * Finally, it will be of interest to compute the error-reducing properties of other well-known families of codes such as BCH codes. 
 
 
-** Constrains **
+** CONSTRAINS :**
 
 * When multiple errors are introduced into a codeword, there is no guarantee of correct recovery of messages. 
 
 * We show that in that situation as well, it can be possible for a Hamming code to reduce the number of errors contained in that codeword in the decoded message.
 
-** About Implementaion **
+** ABOUT IMPLEMENTATION :**
 
 * We proved that the matrix we found is the optimal generator matrix for the [7,4,3]-Hamming code with standard decoding in terms of the mean number of errors in the received message for every possible error vector. 
 
-** Results **
+** RESULTS : **
 
-*Though Hamming codes with standard decoding,, other decoding methods have shown more favorable results.
+* Though Hamming codes with standard decoding,, other decoding methods have shown more favorable results.
 
 * Several decoding algorithms were experimentally tested, giving a best-case result of having 9 7 or 1.2857 errors in the received message.
 
